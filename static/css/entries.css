@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body{
+	margin: 0px;
+	padding: 0;
+	font-family: Poppins;
+	font-weight: 700;
+	font-style: bold;
+  background-color: #f1f9fc;
+  margin-bottom: 100px;
+}
+
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title_header{
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: -12px;
+}
+
+.subtitle{
+  color: #005CD6;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: auto;
+}
+
+.title button{
+  background: #005CD6;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 10px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.title button i {
+  margin-right: 10px; 
+}
+
+
+
+/* TITLE HEADER CARD */
+.main .content .title-header {
+  max-width: 100%;
+}
+
+.title-header .card {
+  display: flex;
+  background: #FFF;
+  border: none;
+  box-shadow: none;
+  /* box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15); */
+  padding: 25px 0px;
+  height: fit-content;
+  /* border-radius: 15px; */
+    
+}
+
+.title-header .card-body{
+  padding-left: 0;
+}
+
+/* SAVE ENTRIES DEFAULT BG */
+.title-header .default {
+  background: rgb(205,255,216);
+  background: linear-gradient(72deg, rgba(205,255,216,1) 0%, rgba(148,185,255,1) 100%);
+  border-radius: 15px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.title-header .card-title{
+  font-weight: 700;
+  text-align: left;
+}
+
+.title-header .card-text{
+  display: flex;
+  font-size: x-large;
+}
+
+.title-header .card-text .date{
+  padding-left: 1rem;
+  margin-left: 1rem;
+  border-left: 1px solid #005CD6;
+}
+
+.title-header .card-text i{
+  color: #005CD6;
+}
+
+.type_and_genre{
+  color: #000;
+  font-family: Poppins;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.2;
+}
+
+.author_and_date i {
+  margin-right: 5px;   /* Add space between icon and text */
+  line-height: 0.7;
+  color: #005CD6;
+}
+
+.type_and_genre{
+  text-align: left;
+}
+
+.type_and_genre p{
+  border: 2px solid #005CD6;
+  border-radius: 20px;
+  padding: 15px 15px;
+  width: fit-content;
+  display: inline-block;   /* Allow paragraphs to sit side-by-side */
+  margin-right: 10px;
+  margin-left: -3px;
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+
+.add-and-otherbtn{
+  display: flex;
+  margin-top: 30px;
+}
+
+.add-entry-dropdown{
+  text-align: left;
+}
+
+.add-entry-dropdown button{
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  background-color: #005CD6;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 10px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.add-and-otherbtn .buttons{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.add-and-otherbtn .heart, .delete, .more-options{
+  background: none;
+  border: none;
+}
+
+.add-and-otherbtn .heart, .add-and-otherbtn .more-options{
+  color: #005CD6;
+}
+
+.add-and-otherbtn .delete{
+  color: red;
+}
+
+.add-and-otherbtn .more-options{
+  margin-left: 10px;
+}
+
+.add-and-otherbtn .buttons i{
+  font-size: 25px;
+}
+
+/* Heart animation */
+.buttons .heart:hover i {
+  animation: heartbeat 1s infinite;
+  color: red;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Trash animation (shake) */
+.buttons .delete:hover i {
+  animation: shake 0.8s cubic-bezier(.36, .07, .19, .97) both;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes shake {
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
+  }
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+/* Ellipsis animation (spin) */
+.buttons .more-options:hover i {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* ARE YOU SURE TO DELETE POPUP */
+#delete-title-popup .container-fluid button, #delete-entry-popup .container-fluid button {
+  cursor: pointer;
+  border-radius: 15px;
+  width: 100%;
+}
+
+/* Modal body styles */
+#delete-entry-popup .modal-body, #delete-title-popup .modal-body {
+  text-align: center;  /* Center the icon and text horizontally */
+}
+
+/* Icon animation and styling */
+#delete-entry-popup .fa-question-circle, #delete-title-popup .fa-question-circle {
+  animation: spin 2s linear infinite; /* Apply spin animation */
+  color: #005CD6;
+}
+
+@keyframes spin { /* Define the spin animation */
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#delete-entry-popup h1, #delete-title-popup h1 {
+  font-size: 28px;
+  margin: 0;
+  line-height: 1;
+  margin: 10px;
+}
+
+#delete-entry-popup p, #delete-title-popup p {
+  font-size: 16px;
+  color: #005CD6;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+
+/* TITLE/ENTRY DELETED POPUP */
+#entry-deleted-popup .modal-body, #title-deleted-popup .modal-body {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#entry-deleted-popup i, #title-deleted-popup i {
+  width: 30px; /* Example: Set desired width */
+  height: auto; 
+  margin-top: 30px;
+}
+
+/* Trash animation */
+.trash-animation {
+  color: #dc3545; /* Red color for deleted */
+  animation: trash-fall 1s ease-out;
+}
+
+@keyframes trash-fall {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  50% { transform: translateY(-10px) scale(1.1); } /* Slight bounce */
+  100% { transform: translateY(20px) scale(0.8); opacity: 0; } /* Fall off and fade out */
+}
+
+#entry-deleted-popup h1, #title-deleted-popup h1 {
+  font-size: 28px;
+  margin: 0;
+  line-height: 1;
+  text-align: center;
+  margin: 10px;
+}
+
+
+#entry-deleted-popup button, #title-deleted-popup button {
+  margin-top: 30px;
+  width: 100%;
+  background-color: #005CD6;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  font-weight: 700;
+}
+
+
+
+
+/* ENTRIES HEADER, CATEGORIZE AND SEARCH */
+.hstack{
+  display: flex;
+  align-items: center;
+}
+
+.hstack p{
+  margin-top: 18px;
+}
+
+.categorize_btn{
+  font-size: 15px;
+  font-family: Poppins;
+  font-weight: 700;
+  color: #005CD6;
+  background-color: white;
+  border: 1px solid #005CD6;
+  border-radius: 10px;
+  padding: 11.5px 15px;
+}
+
+.categorize_btn i{
+  margin-left: 10px;
+}
+
+.search-container{
+  font-size: 15px;
+  font-family: Poppins;
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  border: 1px solid #005CD6;
+  width: 400px;
+}
+
+.search-container i{
+  color:#005CD6;
+}
+
+.search-container input{
+  width: 90%;
+  border: none;
+  height: auto;
+  margin-left: 5px;
+}
+
+.search-container input[type="search"]::placeholder {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #005CD6;
+}
+
+
+
+
+/* ENTRIES */
+.entries img{
+  max-height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.card-img-container {
+  position: relative; /* Allows absolute positioning for button */
+}
+
+.bookmark-overlay {
+  font-size: 20px;
+  color: #005CD6;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: none;
+}
+
+.entries .col .card{
+  border-radius: 15px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.entries .col .card .card-body h4{
+  text-align: left;
+}
+
+.entries .card-text{
+  text-align: left;
+}
+
+.entries .card-body .badges-and-view{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.entries .card-body .badges p{
+  border: 2px solid #005CD6;
+  border-radius: 20px;
+  font-size: small;
+  padding: 4px 15px;
+  width: fit-content;
+  display: inline-block;   /* Allow paragraphs to sit side-by-side */
+  margin-right: 5px;
+  margin-top: -3px;
+  margin-bottom: 0px;
+}
+
+.entries .card-body .badges-and-view button{
+  background: #005CD6;
+  font-family: Poppins;
+  font-size: 15px;
+  font-weight: 700;
+  color: white;
+  padding: 7px 15px;
+  border: none;
+  border-radius: 10px;
+  height: fit-content;
+  cursor: pointer;
+}
+
+.entries .card-body .badges-and-view i{
+  margin-left: 5px;
+}
+
+
+
+
+/* OFFCANVAS */
+#offcanvasScrolling {
+  width: 600px !important; /* Adjust to your desired width */
+}
+
+.offcanvas img{
+  width: 100%;
+  max-height: 200px;
+  border-radius: 15px;
+}
+
+.img-container {
+  position: relative; /* Allows absolute positioning for button */
+}
+
+.img-container .btn-fullscreen {
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Adjust as needed */
+  color: #005CD6;
+  background-color: white;
+}
+
+.img-container .btn-fullscreen i{
+  font-size: x-large;
+}
+
+.offcanvas .offcanvas-body .text-header{
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 0px;
+}
+
+.offcanvas .offcanvas-body .buttons-and-badges{
+  display: flex;
+  justify-content: space-between;
+}
+
+.offcanvas .offcanvas-body .simplified-text-container .simplified-text{
+  background-color: #BFD6F5;
+  border-radius: 15px;
+  padding: 10px 10px;
+}
+
+.offcanvas .offcanvas-body .buttons{
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.offcanvas .offcanvas-body .bookmark, .delete, .more-options, .copy, .print{
+  background: none;
+  border: none;
+}
+
+.offcanvas .offcanvas-body .bookmark, .add-and-otherbtn, .more-options,  .copy, .print{
+  color: #005CD6;
+}
+
+.offcanvas .offcanvas-body .delete{
+  color: red;
+}
+
+.offcanvas .offcanvas-body .buttons i{
+  font-size: 20px;
+}
+
+
+
+
+
+
+/* TOOLS */
+.content .tools_container .btn_holder button{
+  width: 100%;
+  height: 100px;
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 15px;
+}
+
+.content .tools_container .btn_holder i{
+  font-size: xx-large;
+}
+
+
+.content .tools_container .btn_holder p{
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Style the buttons */
+.btn_assessType {
+  display: inline-flex; /* Allow background to be visible around icon */
+  align-items: center;  /* Center the icon vertically */
+  justify-content: center; /* Center the icon horizontally */
+  background-color: white; 
+  border: none;
+  padding: 15px; 
+  border-radius: 5px;
+  transition: background-color 0.5s ease, transform 0.5s ease; 
+}
+
+/* Hover effects */
+.btn_assessType:hover {
+  background-image: linear-gradient(to bottom right, #007BFF, #0056b3); /* Gradient on hover */
+}
+
+
+.btn_assessType:hover i {
+  transform: rotate(360deg); /* Rotate icon 360 degrees on hover */
+  color: white;
+  transition: transform 1s ease;
+}
+
+/* Icon styling */
+.btn_assessType i {
+  font-size: 24px; /* Adjust icon size as needed */
+  color: #005CD6; /* Initial icon color */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions for icon */
+}

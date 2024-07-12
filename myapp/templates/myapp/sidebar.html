@@ -1,0 +1,165 @@
+<!-- SIDEBAR -->
+ {% load static %}
+ {% block sidebar%}
+<div class="sidebar active" >       
+
+    <div class="top ">
+        <img src="{%static '/logo/symbol-cropped.png' %}" alt="logo" class="logo" id="logo" style="width: 160px; margin: 10px 0 10px"> 
+
+
+        <i class="fa-solid fa-bars" id="menu_btn" onclick="setActiveSideBar()"></i>
+        <i class="fa-solid fa-arrow-left" id="back_btn" onclick="setActiveSideBar()"></i>
+    </div>
+
+    <!-- START OF NAV LIST -->
+    <ul >
+        <li>
+            <a class="nav_dash" href="/dashboard">
+                <i class="fa-solid fa-house"></i>
+                <span class="nav-list overflow-hidden">Dashboard</span>
+            </a>
+            
+        </li>
+        <li>
+            <a class="nav_coll"href="/collections">
+                <i class="fa-solid fa-layer-group"></i>
+                <span class="nav-list overflow-hidden">Collection</span>
+            </a>
+            
+        </li>
+            
+        <li>
+            <a class="nav_assess" href="./assessment.php" >
+                <i class="fa-solid fa-check-double"></i>
+                <span class="nav-list overflow-hidden">Assessment</span>
+            </a>
+        </li>
+
+        <li class="dropdown dropend"> 
+            <a href="#" class="nav_tool dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-tools"></i></i>
+                <span class="nav-list" style="margin-right: 5px;">Tools</span>
+            </a>
+            <ul class="dropdown-menu">
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#multiTabModal" data-tab="#simplify-tab"><i class="fas fa-magic"></i> Simplify</a></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#multiTabModal" data-tab="#paraphrase-tab"><i class="fas fa-retweet"></i> Paraphrase</a></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#multiTabModal" data-tab="#translate-tab"><i class="fas fa-language"></i> Translate</a></li>
+                <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#cite-popup"><i class="fas fa-pen-to-square"></i> Cite</a></li>
+            </ul>
+        </li>
+        
+
+    </ul>
+    <!-- START OF NAV LIST -->
+
+    <!-- START OF OVERVIEW -->
+    <div class="overview ">
+        <h1>Overview</h1>
+        <div class="divider"></div>
+        <div class="container">
+            <div class="fig">
+                <p>titles</p>
+                <h1>{{ collection_count }}</h1></h1>
+            </div>
+            <div class="fig">
+                <p>entries</p>
+                <h1>{{ entry_count }}</h1>
+            </div>
+            <div class="fig">
+                <p>tests</p>
+                <h1>{{ test_count }}</h1>
+            </div>
+        </div>
+        <div class="download">
+            <a href="./get_app.php">
+                <i class="fa-solid fa-download"></i>
+                <span>Download Insightify</span>
+            </a>            
+        </div>
+    </div>
+    <!-- END OF OVERVIEW -->
+
+    <div class="profile">
+        <button class="dropdown_button">
+            <img src="{%static './img/profile.png' %}" alt="Profile Icon" style="margin-right: 5px">
+        </button>
+
+        <div class="details">
+            <h3 class="card-text fw-semibold">{{ user.username }}</h3>
+            <p class="card-text">{{ user.email }}</p>
+        </div>
+        
+    </div>
+
+    <div class="dropdown_content">
+
+                <div class="user_container">
+                    <img src="{%static './img/profile.png' %}" alt="Profile Icon">
+
+                    <div class="user_info_dropdown">
+                        <p style="font-weight: 700; font-size: 20px;">{{ user.username }}</p>
+                        <p class="email_dropdown"></p>
+                    </div>
+                    
+                </div>
+
+                <hr class="divider1">
+
+                <a href="./account_settings.php">Account Settings</a>
+                <a href="./about.php">About Insightify</a> 
+                <a href="./get_app.php">Get Insightify App</a>
+                <a href="./privacy_policy.php">Privacy Policy</a>
+                <a href="./contact.php">Contact Us</a>
+                <a href="./terms.php">Terms and Condition</a>
+
+                <hr class="divider2">
+
+                <a href="/logout" style=" margin: 8px 0px;">Log Out</a> 
+            </div>
+            
+    </div>
+    
+
+</div>
+
+{% comment %} <?php include("./tools_popup.php"); ?> {% endcomment %}
+
+<script>
+
+$(document).ready(function(){
+    setInterval({
+        $.ajax({
+            type: "GET",
+            url: "{% url 'userstat-detail' request.user.id %}",
+            success: function(response){
+                console.log(response);
+            }, error: function(response){
+
+            }
+        })
+    },1000)
+
+    function fitTextToContainer(container, textElement, maxFontSize, minFontSize) {
+        const containerWidth = container.clientWidth;
+        let fontSize = maxFontSize;
+
+        textElement.style.fontSize = fontSize + "px";
+        
+        while (textElement.scrollWidth > containerWidth && fontSize > minFontSize) {
+            fontSize -= 1;
+            textElement.style.fontSize = fontSize + "px";
+        }
+    }
+
+    // Target elements
+    const profileDetails = document.querySelector('.sidebar .profile .details');
+    const profileUsername = document.querySelector('.sidebar .profile .details h3');
+    const profileEmail = document.querySelector('.sidebar .profile .details p');
+
+    // Adjust font size for each element
+    fitTextToContainer(profileDetails, profileUsername, 20, 8); // Adjust font size between 16px and 8px
+    fitTextToContainer(profileDetails, profileEmail, 14, 8); // Adjust font size between 14px and 8px
+});
+</script>
+
+{%endblock%}

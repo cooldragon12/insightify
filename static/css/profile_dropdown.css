@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: Poppins;
+}
+
+.dropdown_button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown_button img {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    vertical-align: middle; /* Align with text */
+    margin-right: 5px; /* Add space between image and icon */
+    margin-left: -2px;
+  }
+  
+  .dropdown_content {
+    display: none;        /* Initially hidden */
+    position: absolute;
+    background-color: white;
+    min-width: fit-content;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); */
+    z-index: 1;  
+    flex-direction: column;
+    margin-left: 0px;
+    right: 40px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    overflow: visible;
+  }
+  
+  .dropdown_content a {
+    color: black; 
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;         /* Take up full width */
+    text-align: left;
+    font-weight: 500 ;
+  }
+  
+  .divider1 {
+    border: none;
+    border-top: 1px solid #ddd; /* Adjust style and color */
+    margin: 0px 20px; 
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .divider2 {
+    border: none;
+    border-top: 1px solid #ddd; /* Adjust style and color */
+    margin: 0px 20px; 
+    margin-top: 10px;
+  }
+  
+  .user_container{
+    display: flex;
+    align-items: center;
+  }
+  
+  .user_container img {
+    width: 60px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+    vertical-align: middle; /* Align with text */
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  .user_info_dropdown{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  
+  .user_info_dropdown p {
+    margin: 0px 10px; /* Remove default paragraph margins */
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Adjust text color */
+    font-weight: 300;
+  }
+  
+  .dropdown_button i { /* Assuming you're using Font Awesome */
+    transition: transform 0.3s ease; /* Smooth transition */
+    color: #d4d4d4;
+  }
+  
+  .dropdown_content.show {
+    display: flex;
+  }

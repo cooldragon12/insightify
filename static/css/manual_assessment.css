@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    display: grid;
+    background: #F2FFFA;
+}
+
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_header{
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: -15px;
+}
+
+.subtitle{
+    color: #005CD6;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto;
+}
+
+.parent-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.content-container {
+    width: 90vw;
+    flex-direction: column;
+}
+
+.content-container h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.content-container h2 {
+    font-size: 16px;
+    color: #005CD6;
+    font-weight: normal;
+    margin-top: -10px;
+}
+
+.row-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.row-title .mini-title {
+    font-size: 18px;
+    color: black;
+}
+
+.row-title .ic_num {
+    width: auto;
+    height: 25px;
+    margin-left: 10px;
+    margin-top: -10px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* idk id needed */
+.col-12 .title-input {
+    border: none;
+    width: 100%;
+    background: #BFD6F5;
+    padding: 14px 16px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: black;
+    margin-top: -8px;
+}
+/* idk if needed end */
+
+.col-12 .title-input:focus {
+    outline: none;
+    box-shadow: 0 0 2px rgb(168, 168, 168);
+}
+
+.title-input::placeholder {
+    color: #565656;
+    font-size: 16px;
+}
+
+.form-control.title-input:focus {
+    background: #BFD6F5;
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+.row-container p {
+    font-size: 14px;
+    margin-bottom: 3px;
+    margin-top: 20px;
+    color: #005CD6;
+}
+
+.column-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.column-container .row-title {
+    display: flex;
+    align-items: center;
+}
+
+.column-container .row-title .big-title {
+    font-size: 24px;
+    color: black;
+    line-height: 0.5;
+}
+
+.column-container .row-title button {
+    border: none;
+    background: none;
+    font-size: 24px;
+    font-family: 'Poppins';
+    color: #005CD6;
+    font-weight: 700;
+    text-decoration: 2px underline #005CD6;
+}
+
+.column-container .row-title button:hover {
+    cursor: pointer;
+}
+
+.col-12 .test-input {
+    border: none;
+    width: 100%;
+    background: #BFD6F5;
+    padding: 14px 16px;
+    border-radius: 5px;
+    font-family: 'Poppins';
+    font-size: 16px;
+    color: black;
+    margin-top: -15px;
+}
+
+
+/* FOR CHECKBOXES */
+.checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 170px;
+    overflow-y: auto;
+    background: #BFD6F5;
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin-top: 10px;
+}
+
+.switch {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    color: black;
+    font-size: 16px;
+}
+
+.switch input {
+    display: none;
+}
+
+.checkbox-container {
+    display: inline-block;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #005CD6;
+    border-radius: 5px;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.checkbox-container::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    left: 4px;
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+input:checked + .checkbox-container {
+    background-color: #005CD6;
+}
+
+input:checked + .checkbox-container::after {
+    opacity: 1;
+}
+
+
+
+/* FOR ASSESSMENT LIST */
+.assessment-container {
+    flex-direction: column;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 20px rgba(76, 79, 83, 0.2);
+    padding: 20px 30px;
+    margin: 20px 0 20px;
+}
+
+.assessment-container .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.assessment-container .title-row h1 {
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.assessment-container .icon-container {
+    display: flex;
+    gap: 17px;
+}
+
+.assessment-container .icon-container button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.assessment-container .icon-container .icon {
+    width: auto;
+    height: 23px;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: #D4D4D4;
+    margin: 10px 0;
+}
+
+
+
+/* FOR ASSESSMENT LIST */
+.assessment-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.assessment-list .question, .assessment-list .answer {
+    display: flex;
+    flex-direction: column;
+}
+
+.assessment-list h1 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: black;
+    font-weight: 700;
+}
+
+
+/* FOR INPUT TYPE */
+.assessment-list textarea {
+    width: 100%;
+    padding-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.25;
+    font-family: 'Poppins';
+    border: none;
+    border-bottom: 3px solid #005CD6;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    max-height: 150px;
+    overflow-y: auto;
+    justify-content: center;
+}
+
+.assessment-list textarea:focus {
+    outline: none;
+}
+
+
+
+/* FOR ADD ITEM BUTTON */
+.add-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 13px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    background-color: #005CD6;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+    font-family: 'Poppins';
+}
+
+.add-button i {
+    margin-right: 10px;
+}
+
+.add-button:hover {
+    background-color: #0047a4;
+}
+
+
+
+/* FOR BUTTON */
+.button {
+    margin-top: 30px;
+}
+
+.button button {
+    padding: 8px 18px;
+    font-size: 16px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+.button .btn-success {
+    background-color: #005CD6; 
+    color: white;
+}
+
+.button .btn-success:hover {
+    background-color: #0047a4;
+}
+
+.button .btn-danger {
+    background-color: #dc3545;
+    color: white;
+    margin-left: 10px;
+}
+
+.button .btn-danger:hover {
+    background-color: #b82231;
+}
+
+
+
+
+/* ASSESSMENT CREATED POPUP */
+#assessment-created-popup .modal-body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#assessment-created-popup h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+/* Checkmark animation */
+.checkmark-animation {
+    color: #28a745; /* Green success color */
+    animation: checkmark-bounce 1s ease-out;
+}
+
+@keyframes checkmark-bounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#assessment-created-popup button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #7ED957;
+    border: none;
+    border-radius: 15px;
+    color: #000;
+    font-weight: 700;
+}

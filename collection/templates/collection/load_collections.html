@@ -1,0 +1,51 @@
+            <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-1">
+                        <img src="./img/default.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+
+                    <div class="col-md-11">
+                        <div class="card-body">
+                            <table id="" onclick="">
+                                <tr>
+                                    <td class="title_and_date">
+                                        <p id="" style="justify-content: left;"></p>
+                                        <p class="card-text" style="justify-content: left; font-weight: 400;"><small
+                                                class="text-body-secondary">Last opened 3 mins ago</small></p>
+
+                                    </td>
+
+                                    <td class="author">
+                                        <p></p>
+                                    </td>
+
+                                    <td class="type">
+                                        <p></p>
+                                    </td>
+
+                                    <td class="genre">
+                                        <p></p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div class="buttons">
+                                <button class="heart"><i class="fas fa-heart"></i></button>
+                                <button class="delete" data-bs-toggle="modal" value="<?php echo $row['title_id'] ?>" onclick="DeleteTitles(this.value);"><i
+                                        class="fas fa-trash-alt"></i></button>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+    <div class="empty-container text-center mt-3 mb-5">
+        <img src="./graphics/empty.svg" alt="">
+
+        <p class="card-text mt-3 fw-bold lh-1">Add new titles to fill your collection <br> and save future entries </p>
+    </div>
+    </div>

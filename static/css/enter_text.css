@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins';
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.modal-body {
+    width: 48vw;
+    height: fit-content;
+    background: #BFD6F5;
+    border-radius: 20px;
+    padding: 10px 30px 20px;
+}
+
+.modal-body h1 {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.modal-body textarea, .bottom-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-body textarea {
+    height: 15rem;
+    max-height: 20rem;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-family: 'Poppins';
+    margin-bottom: 20px;
+}
+
+.modal-body textarea:focus {
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+.modal-body textarea::placeholder {
+    font-family: 'Poppins';
+    color: #333;
+    font-size: 15px;
+}
+
+.modal-body input[type="file"] {
+    display: none;
+}
+
+.modal-body label {
+    display: inline-block;
+    color: #222222;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 15px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #222222;
+}
+
+.enter-text-container label i {
+    margin-right: 10px;
+}
+
+.enter-text-container label:active {
+    transform: scale(0.95);
+}
+
+.file-upload-container {
+    display: flex;
+    align-items: center;
+}
+
+.file-upload-container input[type="file"] {
+    display: none;
+}
+
+.file-upload-container label {
+    display: inline-block;
+    color: #222222;
+    text-align: center;
+    padding: 7px 10px;
+    font-size: 14px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #222222;
+}
+
+.file-upload-container label:hover {
+    background-color: #a4c4ed;
+}
+
+.file-upload-container label i {
+    margin-right: 10px;
+}
+
+.progress-bar {
+    color: #222222;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-container button {
+    width: fit-content;
+    margin-top: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #005CD6;
+    color: white;
+    padding: 8px 50px;
+    font-family: 'Poppins';
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+}
+
+.button-container button:hover {
+    background-color: #002B64;
+}
+
+.simplified-text-container {
+    width: 48vw;
+    height: auto;
+    background: #BFD6F5;
+    border-radius: 20px;
+    padding: 10px 30px 20px;
+}
+
+.simplified-text-container h1 {
+    position: relative;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.simplified-text-container textarea {
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 12rem;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-family: 'Poppins';
+    margin-bottom: 20px;
+}
+
+.simplified-text-container textarea:focus {
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+.icon-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 7px;
+}
+
+.icon-container .icon {
+    font-size: 17px;
+}
+
+.icon-container button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #005CD6;
+}
+
+.icon-container button:hover {
+    color: #002B64;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.dropdown-content a:hover {
+    background-color: #EEEEEE;
+}
+
+.dropdown.show .dropdown-content {
+    display: block;
+}

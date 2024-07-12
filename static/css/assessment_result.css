@@ -1,0 +1,370 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    font-family: 'Poppins';
+}
+
+body {
+    margin: 0;
+    padding-bottom: 40px;
+    font-family: 'Poppins';
+    background-color: #F1F9FC !important;
+}
+
+
+/* NAVBAR */
+header {
+    position: sticky;
+    top: 0;
+    width: 100%; 
+    z-index: 100; /* Ensure it stays on top of the sidebar */
+    background-color: #fff; /* Add background color to header */
+    height: 60px;
+    font-family: Poppins;
+    border-bottom: 1px solid #ddd;
+    padding: 0px 20px;
+}
+
+header .btn-exit{
+    color: red;
+    border: none;
+    background: none;
+    font-weight: 700;
+    margin-left: 30px;
+}
+
+header .test-name{
+    text-align: center;
+    color: #005CD6;
+    font-size: x-large;
+    font-weight: 700;
+}
+
+header .btn-print{
+    color: #005CD6;
+    border: none;
+    background: none;
+    font-weight: 700;
+    justify-content: flex-end; /* Push the button to the right */
+    padding-left: 70%;
+}
+
+header .row {
+    height: 100%; /* Make row fill header height */
+    display: flex;   /* Use flexbox for easy alignment */
+    align-items: center; /* Vertically align items */
+}
+
+header .test-name {
+    flex-grow: 1;  /* Allow this column to expand and fill remaining space */
+    justify-content: center; /* Center the text horizontally */
+}
+
+/* CONTAINER */
+.container {
+    font-family: 'Poppins';
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.container h2 {
+    font-weight: 700;
+    margin: -5px;
+}
+
+.container p {
+    color: #005CD6;
+}
+
+.container h1 {
+    font-size: 18px;
+    margin: 15px 0 20px;
+    font-weight: 600;
+}
+
+/* RESULT CONTAINER */
+
+.result-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.result-container .left-side {
+    width: 65%;
+}
+
+.result-container .right-side {
+    width: 35%;
+}
+
+.result-container .right-side button {
+    display: block;
+    margin-bottom: 12px;
+    padding: 8px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.result-container .right-side button i {
+    margin-right: 5px;
+}
+
+.small-text {
+    margin-left: 10px;
+    color: white;
+}
+
+/* DOUGHNUT CHART */
+.chart-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 55%; 
+}
+
+#doughnutChart {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* BUTTON ON THE RIGHT SIDE */
+.btn-container {
+    display: grid;
+    grid-template-columns: auto auto 1fr; 
+    grid-column-gap: 18px; 
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #005CD6;
+    padding: 10px;
+    width: 250px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.btn-container .icon i {
+    font-size: 22px;
+    margin-left: 10px;
+    color: #fff;
+}
+
+.btn-container .arrow i {
+    font-size: 22px;
+    color: #fff;
+}
+
+.btn-container .title {
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+}
+
+.btn-container .additional-info {
+    font-size: 14px;
+    color: #fff;
+}
+
+
+/* SIDEBAR */
+.sidebar {
+    position: fixed;
+    top: 80px; /* Start the sidebar below the header */
+    left: 0;
+    height: calc(100% - 80px); /* Adjust height to account for header */
+    overflow-y: auto;
+    z-index: 99; /* Lower z-index than the header */
+}
+
+.sidebar button {
+    background-color: #005CD6; 
+    color: #fff; 
+    font-weight: 600;
+    border: none; 
+    border-radius: 0 10px 10px 0;
+    padding: 12px 20px;
+    font-size: 16px; 
+    cursor: pointer; 
+}
+
+.sidebar button:hover {
+    background-color: #0056b3;
+}
+
+.sidebar i {
+    margin-left: 10px;
+}
+
+.card {
+    font-family: 'Poppins';
+    border: none !important;
+    margin-left: 20px;
+    background-color: transparent !important;
+}
+
+.card .text-title {
+    font-weight: 600;
+    font-size: 14px;
+    color: #005CD6;
+}
+
+.card li {
+    font-size: 14px;
+    color: #1CE13C;
+}
+
+.card .wrong {
+    font-size: 14px;
+    color: #de1e3e;
+}
+
+
+/* TEST CONTAINER */
+.col-8 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    gap: 30px;
+}
+
+.test-container, .wrong-test-container {
+    width: 80%;
+    border-radius: 20px;
+    padding: 30px 50px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.test-container {
+    background-color: white;
+}
+
+.wrong-test-container {
+    background-color: #ff575743;
+}
+
+.test-container .question-header,
+.wrong-test-container .question-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.test-container .question-header i,
+.wrong-test-container .question-header i {
+    color: #005CD6;
+    font-size: 14px;
+}
+
+.test-container .question-header h1,
+.wrong-test-container .question-header h1 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #005CD6;
+}
+
+.test-container h1, .test-container h2,
+.wrong-test-container h1, .wrong-test-container h2 {
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Poppins';
+    margin-bottom: 20px;
+}
+
+.test-container .span-text-bold,
+.wrong-test-container .span-text-bold {
+    font-weight: 600;
+}
+
+
+/* CHOICES */
+.choices-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+}
+
+.choices-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice-button, .wrong-button, .check-button {
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins';
+    margin-bottom: 10px;
+}
+
+.choice-button {
+    border: 2px solid #005CD6;
+    background: none;
+}
+
+.wrong-button {
+    background: #C23249;
+    border: 2px solid #ae2b41;
+    color: white;
+}
+
+.check-button {
+    background: #1CE13C;
+    border: 2px solid #07a421;
+    color: white;
+}
+
+.selected {
+    background-color: #005CD6;
+    color: #fff;
+}
+
+
+/* INPUT ANSWER */
+.test-container input {
+    width: 100%; 
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #005CD6;
+    border-radius: 10px; 
+    outline: none;
+    font-family: 'Poppins';
+}
+
+.test-container input::placeholder {
+    color: #999;
+    font-family: 'Poppins';
+}
+
+.test-container input:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* INPUT ANSWER WRONG CONTAINER */
+.wrong-test-container input {
+    width: 100%; 
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #005CD6;
+    border-radius: 10px; 
+    outline: none;
+    font-family: 'Poppins';
+}
+
+.wrong-test-container input::placeholder {
+    color: #999;
+    font-family: 'Poppins';
+}
+
+.wrong-test-container input:focus {
+    border-color: #0056b3; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

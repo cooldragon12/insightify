@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: Poppins;
+}
+
+
+/* MODAL / TAB / FOOTER */
+#multiTabModal .custom-modal-width {
+    max-width: 70%;
+}
+
+#multiTabModal .modal-body {
+    padding: 25px 20px 10px 20px;
+    height: fit-content;
+}
+
+#multiTabModal .modal-footer {
+    padding: 8px 15px 8px;
+}
+
+#multiTabModal .modal-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#multiTabModal .modal-content {
+    border-radius: 15px;
+}
+
+#multiTabModal .modal-header {
+    background-color: #005CD6;
+    width: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    color: white;
+}
+
+#multiTabModal .modal-header h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#multiTabModal .nav-tabs {
+    width: 100%;
+    font-weight: 600;
+    border-bottom-color: transparent;
+}
+
+#multiTabModal .nav-tabs .nav-link {
+    border: 1px solid #ddd;
+    padding: 10px 50px;
+    background-color: #f4f3f338;
+}
+
+#multiTabModal .nav-tabs .nav-link.active {
+    border-color: #ddd;
+    background-color: #005CD6;
+    color: white;
+    border-bottom-color: transparent;
+}
+
+#multiTabModal .nav-item button i {
+    margin-right: 5px;
+}
+
+#multiTabModal .tab-content{
+    padding: 40px 20px;
+    border: 1px solid #ddd;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+
+#multiTabModal .tab-content > .tab-pane {
+    display: none;
+}
+
+#multiTabModal .tab-content > .active {
+    display: block;
+}
+
+#multiTabModal .left-col, .right-col {
+    width: 48%;
+}
+
+#multiTabModal .left-col {
+    float: left;
+}
+
+#multiTabModal .right-col {
+    float: right;
+}
+
+/* TEXTAREA */
+#multiTabModal .textarea-container {
+    position: relative;
+}
+
+#multiTabModal .clearfix textarea {
+    height: 17rem;
+    max-height: 20rem;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #BFD6F5;
+    color: black;
+    font-size: 16px;
+    font-family: 'Poppins';
+    /* margin-bottom: 10px; */
+    line-height: 1.25;
+    resize: none;
+}
+#multiTabModal .right-col textarea {
+    height: 20rem;
+}
+
+#multiTabModal .clearfix textarea::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+#multiTabModal .clearfix textarea {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#multiTabModal .clearfix textarea:focus {
+    /* background-color: none; */
+    /* outline: none; */
+    box-shadow: none;
+}
+
+#multiTabModal .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#multiTabModal .clearfix h1 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+/* COPY BUTTON */
+#multiTabModal .textarea-container .btn-icon {
+    z-index: 1;
+    font-size: 16px;
+    padding: 0px;
+    color: #005CD6;
+    border: none;
+}
+
+/* FILE UPLOAD BUTTON */
+#multiTabModal .file-upload-container {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#multiTabModal .file-upload-container input[type="file"] {
+    display: none;
+}
+
+#multiTabModal .file-upload-container label {
+    display: inline-block;
+    color: #005CD6;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #005CD6;
+}
+
+#multiTabModal .file-upload-container label:hover {
+    background-color: #a4c4ed7a;
+}
+
+#multiTabModal .file-upload-container label i, .dropdown i {
+    margin-right: 5px;
+}
+
+#multiTabModal .hidden {
+    display: none !important;
+}
+
+/* GENERATE BUTTON */
+#multiTabModal .generate-container {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #BFD6F5;
+    margin-top: -15px !important; 
+    border-radius: 0 0 10px 10px;
+}
+#multiTabModal .generate-container .btn-generate {
+    font-weight: 600;
+    border-radius: 14px;
+    margin: 15px 20px 10px;
+}
+
+#multiTabModal .generate-container .btn-generating {
+    font-weight: 600;
+    border-radius: 14px;
+    margin: 15px 20px 10px;
+}
+
+/* DROPDOWN TRANSLATE */
+#multiTabModal .dropdown-lang button {
+    border: none;
+    font-size: 19px;
+    font-weight: 700;
+    color: #212529;
+    padding: 0;
+    margin: 0 0 5px;
+    background: none;
+}
+
+#multiTabModal .dropdown-toggle:focus,
+.dropdown-toggle:active {
+    background-color: transparent !important;
+    color: #212529;
+}
+
+#multiTabModal .dropdown-lang button:hover {
+    background: none;
+    border: none;
+    color: #005CD6;
+}
+
+#multiTabModal .dropdown-lang .dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#multiTabModal .dropdown-lang .dropdown-menu .form-control {
+    font-size: 14px;
+}
+
+/* FOOTER BUTTONS */
+#multiTabModal .modal-footer-buttons{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+#multiTabModal .modal-footer-buttons button{
+    border-radius: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+
+/* SAVE ENTRY POPUP */
+#saveEntry .col-12 input[type=text]{
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background-color: #BFD6F5;
+    color: black;
+    font-family: Poppins;
+}
+
+#saveEntry .modal-body select {
+    background-color: #BFD6F5;
+    padding: 15px 20px;
+    border: none;
+    width: 100%;
+}
+
+#saveEntry .modal-body h1 {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+#saveEntry .col-1 button{
+    background-color: #005CD6;
+    padding: 13px;
+    border: none;
+    border-radius: 5px;
+    margin-left: -13px;
+    height: 54px;
+}
+
+#saveEntry .modal-footer-button{
+    display: flex;
+    justify-content: end;
+}
+
+
+#saveEntry .modal-footer-button button{
+    border-radius: 15px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#saveEntry input:focus, 
+#saveEntry select:focus {
+    background: #BFD6F5;
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+
+/* ENTRY SAVED POPUP */
+#entry-saved-popup .modal-body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#entry-saved-popup h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+/* Checkmark animation */
+.checkmark-animation {
+    color: #28a745; /* Green success color */
+    animation: checkmark-bounce 1s ease-out;
+}
+
+@keyframes checkmark-bounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#entry-saved-popup button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #7ED957;
+    border: none;
+    border-radius: 15px;
+    color: #000;
+    font-weight: 700;
+}
+
+
+/* CITE POPUP */
+#cite-popup .modal-dialog-centered {
+    border-radius: 20px;
+}
+
+#cite-popup .modal-content {
+    border-radius: 15px;
+}
+
+#cite-popup .modal-header {
+    background-color: #005CD6;
+    width: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    color: white;
+}
+
+#cite-popup .modal-header h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+  
+#cite-popup .modal-body h2{
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 700;
+}
+  
+#cite-popup .modal-body {
+    padding: 20px; /* Add padding to all sides */
+}
+  
+  /* Full-width input fields */
+#cite-popup .modal-body input[type=text] {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background-color: #BFD6F5;
+    color: black;
+    font-family: Poppins;
+}
+  
+#cite-popup .modal-body select {
+    background-color: #BFD6F5;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Style the copy button */
+#cite-popup .copy-button {
+    position: absolute;
+    top: 70%;                      /* Position it in the middle vertically */
+    right: 10px;                   /* Adjust as needed */
+    transform: translateY(-50%);   /* Center it vertically */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#cite-popup .copy-button i {
+    color: #005CD6;
+    font-size: x-large;
+}
+
+#cite-popup .header-divider {
+    margin-bottom: -35px;
+}
+
+
+#cite-popup .col-3 p{
+    font-size: medium;
+    font-weight: 700;
+    color: #005CD6;
+    text-align: right;
+    margin-top: 16px;
+}
+
+#cite-popup .col-1 button, .cite-save{
+    background-color: #005CD6;
+    color: white;
+    font-weight: 700;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 5px;
+}
+
+#cite-popup .save-btn-container{
+    display: flex;           /* Enable flexbox */
+    justify-content: center;  /* Horizontal alignment */
+    align-items: center;
+}
+
+#cite-popup .cite-save{
+    font-size: large;
+    padding: 10px 20px;
+    width: fit-content;
+}
+
+#cite-popup .form-select:focus,
+#cite-popup .form-control:focus  {
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+
+
+/* TOAST */
+.logo-img-toast {
+    width: 10px; /* Adjust the width as per your requirement */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.toast-container.show {
+    display: block;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}

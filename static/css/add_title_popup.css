@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: Poppins;
+}
+
+/* POPUP FORM */
+.modal {
+  opacity: 0;          /* Start with modal hidden */
+  transition: opacity 0.5s ease;
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .modal.show {        /* Style for the open modal */
+    opacity: 1;
+  }
+  
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 500px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    margin: 5% auto;
+  }
+  
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .modal-header {
+    background-color: white;
+    width: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    color: black;
+    padding-left: 40px;
+  }
+
+  .modal-header h1{
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  .bluetext{
+    color: #005CD6;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: -25px;
+  }
+  
+  .modal-body h2{
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  .modal-body {
+    padding: 20px; /* Add padding to all sides */
+}
+  
+  /* Full-width input fields */
+  .modal-body input[type=text], .form-container input[type=password], .form-container select {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background-color: #BFD6F5;
+    color: #565656;
+    font-family: Poppins;
+  }
+  
+  .modal-body select {
+    margin-top: 10px;
+    background-color: #BFD6F5;
+    padding: 15px 20px;
+    border: none;
+  }
+  
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #005CD6;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top:40px;
+    font-family: Poppins;
+    font-size: 14px;
+  }
+  
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }

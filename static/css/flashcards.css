@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0px;
+    padding: 0;
+    font-family: Poppins;
+    font-weight: 700;
+    font-style: bold;
+    background-color: #f1f9fc;
+    margin-bottom: 100px;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_header {
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: -15px;
+}
+
+.subtitle {
+    color: #005CD6;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: auto;
+}
+
+
+/* Heart animation */
+.heart-btn:hover i {
+animation: heartbeat 1s infinite; /* Apply heartbeat animation on hover */
+}
+
+@keyframes heartbeat { /* Define the heartbeat animation */
+0% { transform: scale(1); }
+50% { transform: scale(1.2); }
+100% { transform: scale(1); }
+}
+
+/* Trash animation (shake) */
+.trash-btn:hover i {
+animation: shake 0.8s cubic-bezier(.36,.07,.19,.97) both; /* Apply shake animation on hover */
+transform: translate3d(0, 0, 0); /* Initial position for smooth animation */
+}
+
+@keyframes shake {
+10%, 90% { transform: translate3d(-1px, 0, 0); }
+20%, 80% { transform: translate3d(2px, 0, 0); }
+30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Pencil animation (rotation) */
+.pencil-btn:hover i {
+animation: spin 1s linear infinite; /* Apply spin animation on hover */
+}
+
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+
+
+/* ARE YOU SURE TO DELETE POPUP */
+#delete-test-popup .container-fluid button {
+    cursor: pointer;
+    border-radius: 15px;
+    width: 100%;
+}
+
+/* Modal body styles */
+#delete-test-popup .modal-body {
+    text-align: center;  /* Center the icon and text horizontally */
+}
+
+/* Icon animation and styling */
+#delete-test-popup .fa-question-circle {
+    animation: spin 2s linear infinite; /* Apply spin animation */
+    color: #005CD6;
+}
+
+@keyframes spin { /* Define the spin animation */
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#delete-test-popup h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+    margin: 10px;
+}
+
+#delete-test-popup p {
+    font-size: 16px;
+    color: #005CD6;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+/* TEST DELETED POPUP */
+#test-deleted-popup .modal-body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#test-deleted-popup i {
+    width: 30px; /* Example: Set desired width */
+    height: auto; 
+    margin-top: 30px;
+}
+
+/* Trash animation */
+.trash-animation {
+    color: #dc3545; /* Red color for deleted */
+    animation: trash-fall 1s ease-out;
+}
+
+@keyframes trash-fall {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-10px) scale(1.1); } /* Slight bounce */
+    100% { transform: translateY(20px) scale(0.8); opacity: 0; } /* Fall off and fade out */
+}
+
+#test-deleted-popup h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+
+#test-deleted-popup button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #005CD6;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-weight: 700;
+}
+
+
+
+
+
+/* CARDS */
+.container .row {
+    height: fit-content;
+    width: 90%;
+    margin: auto;
+}
+
+.card-container {
+    position: relative; /* Allows absolute positioning of cards */
+    display: flex; /* Use flexbox for the card container */
+    align-items: center; /* Vertically center the active card */
+    justify-content: center; /* Horizontally center the active card */
+}
+
+.card-container .card {
+    border: none;
+    border-radius: 15px;
+}
+
+/* FLIP CARDS */
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px; /* Creates the 3D effect */
+    display: none; /* Initially hide all cards */
+}
+
+.flip-card.active {
+    display: block; /* Show the active card */
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flip-card-front,
+.flip-card-back {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Prevents flickering in older browsers */
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    font-size: x-large;
+    justify-content: center; /* Center items horizontally */
+}
+
+.flip-card-front .card {
+    color: black;
+    background: white;
+    width: 100%;
+}
+
+.flip-card-back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+    width: 100%;
+    background-color: #BFD6F5;
+}
+
+.flip-card-back .card {
+    width: 100%;
+    color: black;
+    background-color: #BFD6F5;
+    border-radius: 15px;
+}
+
+.flip-card-inner.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Centering the text inside the card horizontally */
+.flip-card .card-body {
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Optional: center items vertically if needed */
+    flex-direction: column; /* Ensure elements are arranged in a column */
+    text-align: center; /* Center align text */
+    width: 100%;
+    height: 100%;
+    padding: 20px; /* Adjust padding if necessary */
+    box-sizing: border-box;
+}
+
+.tts-btn {
+    position: absolute;
+    top: 10px; /* Adjust top position as needed */
+    right: 10px; /* Adjust right position as needed */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.tts-btn i {
+    font-size: 20px;
+    color: #005CD6;
+}
+
+.prev-btn i, .next-btn i {
+    font-size: 50px; /* Adjust the icon size */
+    color: #005CD6; /* Set the icon color */
+}
+
+.prev-btn-col,
+.next-btn-col {
+    display: flex; /* Enable flexbox for the columns */
+    justify-content: center; /* Center the button horizontally */
+    align-items: center; /* Center the button vertically */
+    padding: 0; /* Remove default Bootstrap padding */
+    background-color: none;
+    border: none;
+}
+
+.prev-btn-col button,
+.next-btn-col button {
+    background-color: none;
+    background: none;
+    border: none;
+}
+
+.prev-btn:disabled i,
+.next-btn:disabled i {
+    color: gray; /* Change the icon color to gray */
+    cursor: not-allowed; /* Optional: change the cursor to indicate it's not clickable */
+}
+
+
+
+
+/* Flex container for controls */
+.card-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.card-controls .counter {
+    font-size: 30px;
+    font-weight: 700;
+    color: #005CD6;
+}
+
+/* Icon group styling */
+.icon-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Button styling for icons */
+.icon-btn {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #005CD6;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+.icon-btn:hover {
+    color: #003d99;
+}
+
+/* Counter styling */
+.counter {
+    text-align: center;
+    font-size: 20px;
+    flex-grow: 1;
+}
+
+/* Take Test button styling */
+.take-test-btn {
+    background-color: #005CD6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.take-test-btn i{
+    margin-right: 10px;
+}
+
+.take-test-btn:hover {
+    background-color: #003d99;
+}
+
+
+
+
+/* FLASHCARD LIST */
+.flashcard-list .card{
+    display: flex;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    padding: 20px 10px;
+}
+
+.flashcard-list .card .col-md-1{
+    font-size: 50px;
+    font-weight: 700;
+    color: #005CD6;
+    text-align: center;
+}
+
+.flashcard-list .card .col-md-4{
+    border-left: 3px solid #005CD6;
+    padding-left: 20px;
+}
+
+.flashcard-list .card .col-md-7 .card-title{
+    font-weight: 700;
+}
+
+.flashcard-list .card .col-md-4 .card-title{
+    font-weight: 700;
+}
+.flashcard-list .row {
+    position: relative; /* Make row a positioning context */
+}
+
+
+
+
+/* TAKE TEST POPUP */
+#takeTest .modal-content{
+    border-radius: 15px;
+}
+
+#takeTest .modal-header {
+    background-color: #005CD6;
+    width: auto;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 20px;
+    color: white;
+}
+
+#takeTest .modal-header h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#takeTest .modal-header p{
+    margin-bottom: -10px;
+}
+
+#takeTest .form-check-input{
+    border-color: #005CD6;
+}
+
+#takeTest .form-check-label{
+    color: black;
+}
+
+#takeTest .counter-container {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+#takeTest .counter-input {
+    width: 70px;
+    text-align: center;
+    font-size: 16px;
+    font-family: 'Poppins';
+    border: none;
+    height: 54px;
+    background: #BFD6F5;
+    border-radius: 10px;
+    color: black;
+    padding: 0 10px;
+    padding-left: 24px;
+    margin: 0 10px;
+}
+
+#takeTest .counter-input:focus {
+    outline: none;
+    box-shadow: 0 0 2px rgb(168, 168, 168);
+}
+
+#takeTest .counter-btn {
+    background: none;
+    border: none;
+    color: #005CD6;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+#takeTest .bluetext{
+    color: #005CD6;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+#takeTest .form-select{
+    width: 100%;
+    font-size: 16px;
+    font-family: 'Poppins';
+    border: none;
+    height: 54px;
+    background-color: #BFD6F5;
+    border-radius: 10px;
+    color: black;
+    padding: 0 20px;
+    margin: 0 20px;
+}
+
+#takeTest .btn-primary{
+    background-color: #005CD6;
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+}
+

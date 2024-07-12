@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sign In - Insightify</title>
+    {% load static %}
+    <link rel="icon" href="{% static '/logo/symbol_blue.png' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Insightify">
+    <meta name="description"
+        content="The website is an application simplify, translate, and paraphrase words using Google's Gemini.">
+    <meta name="keywords" content="Insightify, NLP, OCR, ">
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta charset="UTF-8">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="{% static '/js/login_signup.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static '/css/login_signup.css' %}">
+    <style>
+        .error-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            background-color: #f44336;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .error-modal .modal-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .error-modal .close-btn {
+            margin-top: 30px;
+            padding: 5px 0px;
+            background-color: white;
+            color: #f44336;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            width: 100%;
+        }
+
+        .error-modal .close-btn:hover {
+            background-color: #ddd;
+        }
+
+        #errorModal .modal-content i {
+            display: block;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+
+
+        /* ACCOUNT REGISTERED POPUP */
+        .registered-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            max-width: 400px;
+            background-color: #fff;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .registered-modal .modal-content {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .registered-modal .close-btn {
+            margin-top: 30px;
+            padding: 5px 0px;
+            background-color: #7ED957;
+            color: black;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: 700;
+            width: 100%;
+        }
+
+        .registered-modal .close-btn:hover {
+            background-color: #ddd;
+        }
+
+        #registeredModal .modal-content i {
+            display: block;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="forms-container">
+            <div class="signin-signup">
+                <form action="" class="sign-in-form" method="POST">
+                    {% csrf_token %} 
+                    <img src="{% static '/img/img_insightifylogo.png' %}" class="logo-image" alt="">
+                    <h2 class="title">Log in to your Account </h2>
+                    <p class="text-field">username</p>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="username" placeholder="Input Username" required>
+                    </div>
+                    <p class="text-field">password</p>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Input Password" required>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <input type="submit" class="btn solid" style="font-family: Poppins;" value="Sign In" name="login_submit">
+                    <p class="social-text">────────── or continue with ──────────</p>
+                    <div class="social-media">
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-google"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </form>
+
+                <form id="sign-up-form" action="" class="sign-up-form" method="POST">
+                    {% csrf_token %}
+                    <h2 class="title">Create new account</h2>
+                    <p class="text-field" name="register">username</p>
+                    <div class="input-field">
+                        <i class="fas fa-user"></i>
+                        {{ signup_form.username}}
+                    </div>
+                    <p class="text-field">email</p>
+                    <div class="input-field">
+                        <i class="fas fa-envelope"></i>
+                        {{signup_form.email}}
+                    </div>
+                    <p class="text-field">password</p>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        {{ signup_form.password1 }}
+                    </div>
+                    <p class="text-field">confirm password</p>
+                    <div class="input-field">
+                        <i class="fas fa-lock"></i>
+                        {{ signup_form.password2 }}
+                    </div>
+                    <p class="text-field">date of birth</p>
+                    <div class="input-field">
+                        <i class="fas fa-calendar"></i>
+                        {{ signup_form.date_of_birth  }}
+                    </div>
+                    <input id="register_submit" type="submit" value="Submit" class="btn solid">
+                </form>
+            </div>
+            <div class="panels-container">
+                <div class="panel left-panel">
+                    <div class="content">
+                        <h3>Don't have an account?</h3>
+                        <button class="btn transparent" id="sign-up-btn">Sign up here!</button>
+                        <p>Join our vibrant community to unlock a wealth of knowledge and personalized insights tailored
+                            to your interests and needs.
+                            Elevate your literacy and understanding—take the first step and sign up now!</p>
+                    </div>
+                    <img src="{% static '/img/log.svg'%}" class="image" alt="">
+                </div>
+                <div class="panel right-panel">
+                    <div class="content">
+                        <h3>Already registered?</h3>
+                        <button class="btn transparent" id="sign-in-btn">Sign in here.</button>
+                        <p>Continue your journey of learning with Insightify. Explore new topics, and expand your
+                            knowledge base effortlessly.
+                            Don't miss out on the latest insights—log in today and discover something new!</p>
+                    </div>
+                    <img src="{% static '/img/register.svg' %}" class="image" alt="">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Error Modal -->
+        <div id="errorModal" class="error-modal">
+            <div class="modal-content">
+                <i class="fas fa-exclamation-triangle fa-beat fa-2x" style="color: white; display=block;"></i>
+                <p style="font-size: 28px;"></p>
+                <p id="errorMessage"></p>
+                <button class="close-btn" onclick="closeErrorModal()">Close</button>
+            </div>
+        </div>
+
+        <!-- Registered Modal -->
+        <div id="registeredModal" class="registered-modal">
+            <div class="modal-content">
+                <i class="fas fa-check-circle fa-2x checkmark-animation mt-3" style="color:#28a745;"></i>
+                <p style="font-size: 28px; line-height: 1; color: black;">Account succesfully registered!</p>
+                <button class="close-btn" onclick="closeRegisteredModal()">Close</button>
+            </div>
+        </div>
+        
+        <script>
+            function showErrorModal(message) {
+                var errorMessage = document.getElementById("errorMessage");
+                errorMessage.innerText = message;
+                var errorModal = document.getElementById("errorModal");
+                errorModal.style.display = "block";
+            }
+
+            function closeErrorModal() {
+                var errorModal = document.getElementById("errorModal");
+                errorModal.style.display = "none";
+                $("#register_submit").prop('disabled', false);
+            }
+
+            function showRegisteredModal() {
+                var registeredModal = document.getElementById("registeredModal");
+                registeredModal.style.display = "block";
+            }
+
+            function closeRegisteredModal() {
+                var registeredModal = document.getElementById("registeredModal");
+                registeredModal.style.display = "none";
+                switchPanel('sign-in');
+                localStorage.setItem('currentPanel', 'sign-in');
+            }
+
+            function switchPanel(panel) {
+                var container = document.querySelector('.container');
+                if (panel === 'sign-up') {
+                    container.classList.add("sign-up-mode");
+                } else {
+                    container.classList.remove("sign-up-mode");
+                }
+            }
+
+            document.getElementById('sign-up-btn').addEventListener('click', function () {
+                switchPanel('sign-up');
+                localStorage.setItem('currentPanel', 'sign-up');
+            });
+
+            document.getElementById('sign-in-btn').addEventListener('click', function () {
+                switchPanel('sign-in');
+                localStorage.setItem('currentPanel', 'sign-in');
+            });
+
+            $('#sign-up-form').on('submit', function(event) {
+                event.preventDefault();
+                $("#register_submit").prop('disabled', true);
+                $.ajax({
+                    url: "{% url 'login_signup' %}",
+                    type: "POST",
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        if (response.success) {
+                            $("#register_submit").prop('disabled', false);
+                           showRegisteredModal();
+                           
+                        } else if(response.reason == 'email_error'){
+                            showErrorModal("Error:\n" + response.error);
+                        }
+                        else{
+                            let errors = '';
+                            for( let error in response.error){
+                               errors += response.error[error].join('\n ') + '\n';
+                            }
+                            showErrorModal("Error:\n" + errors);
+                        }
+                    }
+                });
+            });
+
+
+        {% if messages%}
+        {%for message in messages%}
+        {% if message.tags == "error"%}
+            showErrorModal('{{ message }}');
+        {%endif%}
+        {%endfor%}
+        {%endif%}
+        </script>
+    </div>
+</body>
+
+</html>

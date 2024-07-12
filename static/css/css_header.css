@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* TOP NAVIGATION BAR */
+header {
+    top:0;
+    z-index: 999999;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    font-weight: 700;
+  }
+  header .logo_container{
+    margin-left: 100px;
+    margin-top: 2.5px;
+    max-height: 100%;
+    margin-right: -80px;
+  }
+  header .logo{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 5px;
+    vertical-align: middle;
+  }
+  header .logo:hover{
+    cursor: pointer;
+  }
+  header .nav{
+    display: flex;
+    margin-right: 100px;
+    width: auto;
+    align-items: center;
+  }
+  .nav .nav_links_container {
+    display: flex; /* Keep elements horizontal on larger screens */
+    align-items: center;
+  }
+  header .nav .nav_list {
+    padding:0;
+    display:flex;
+    list-style: none;
+    font-family: Poppins;
+    font-size: 14px;
+  }
+  header .nav .nav_list a{
+    text-decoration: none !important;
+    color: #505050;
+    padding: 0px 20px;
+  }
+  header .nav .nav_list a:hover{
+    color: #005CD6;
+    border-bottom: 3px solid #005CD6;
+  }
+  
+  .dropdown_button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown_button img {
+    width: 40px; /* Adjust as needed */
+    height: 40px; /* Adjust as needed */
+    vertical-align: middle; /* Align with text */
+    margin-right: 5px; /* Add space between image and icon */
+    margin-left: 10px;
+  }
+  
+  .dropdown_content {
+    display: none;        /* Initially hidden */
+    position: absolute;
+    background-color: white;
+    min-width: fit-content;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); */
+    z-index: 1;  
+    flex-direction: column;
+    margin-left: 0px;
+    right: 100px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    overflow: visible;
+  }
+  
+  .dropdown_content a {
+    color: #505050; 
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;         /* Take up full width */
+    text-align: left;
+    font-weight: 500 ;
+  }
+  
+  .divider1 {
+    border: none;
+    border-top: 1px solid #ddd; /* Adjust style and color */
+    margin: 0px 20px; 
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .divider2 {
+    border: none;
+    border-top: 1px solid #ddd; /* Adjust style and color */
+    margin: 0px 20px; 
+    margin-top: 10px;
+  }
+  
+  .user_container{
+    display: flex;
+    align-items: center;
+  }
+  
+  .user_container img {
+    width: 60px; /* Adjust as needed */
+    height: 60px; /* Adjust as needed */
+    vertical-align: middle; /* Align with text */
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  
+  .user_info_dropdown{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-right: 20px;
+  }
+  
+  .user_info_dropdown p {
+    margin: 0px 10px; /* Remove default paragraph margins */
+    font-size: 14px; /* Adjust font size */
+    color: #333; /* Adjust text color */
+    font-weight: 300;
+  }
+  
+  .dropdown_button i { /* Assuming you're using Font Awesome */
+    transition: transform 0.3s ease; /* Smooth transition */
+  }
+  
+  .dropdown_content.show {
+    display: flex;
+  }
+  
+  
+  /* RESPONSIVE STYLE FOR NAVIGATION BAR */
+  .hamburger {
+    display: none; 
+    cursor: pointer;
+    margin-left: auto;
+  }
+  
+  .bar{
+    background-color: black;
+  }
+  
+  .sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 50px; /* Padding for the top to account for the header */
+  }
+  
+  .sidebar a {
+    padding: 8px 8px 8px 32px; 
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidebar .nav_links_container, .sidebar .dropdown_container {
+    width: 100%; /* Make the containers take up full sidebar width */
+  }
+  
+  
+  /* Media Query for Smaller Screens (e.g., tablets and below) */
+  @media (max-width: 768px) {
+    header {
+      justify-content: space-between; /* Restore this for proper spacing on mobile */
+    }
+    
+    .hamburger {
+      display: block !important;
+    }
+    .nav .nav_links_container, .dropdown_container {
+      display: none;  /* Hide on small screens */
+    }
+    .sidebar.show .nav_links_container, .sidebar.show .dropdown_container {
+      display: block;
+    }
+  
+    .sidebar .nav_list {
+      list-style: none;
+      margin: 20px 0; 
+      padding: 0;
+    }
+  
+    .sidebar .nav_list li {
+      margin-bottom: 10px; 
+      text-align: center;
+    }
+  
+    .sidebar .download_container {
+      margin: 10px 0;
+      display: block; /* Ensure the button is visible */
+      width: 100%;    /* Make the button full width */
+      text-align: center; /* Center the button's content */
+    }
+  }

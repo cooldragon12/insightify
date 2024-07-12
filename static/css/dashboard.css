@@ -1,0 +1,1113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: Poppins;
+}
+
+
+/* POPULAR CAROUSEL */
+.carousel-inner {
+    width: 100%;
+    height: fit-content; /* Important for dynamic height */
+    background-size: cover;
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    position: relative; /* Enable absolute positioning for overlay */
+}
+
+.img-gradient-overlay {  /* New class for the gradient overlay */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Match the height of .carousel-inner */
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+    pointer-events: none; /* Allow clicks to pass through to the image */
+}
+
+.carousel-inner img {
+    height: 300px; /* Or adjust as needed */
+    object-fit: cover;
+    width: 100%; /* Make image responsive */
+}
+
+
+.carousel-inner h2{
+    color: white;
+    font-weight: 700;
+}
+
+.carousel-inner .author{
+    color: white;
+    margin-top: -10px;
+}
+
+.carousel-inner .carousel-caption{
+    color: white;
+    font-size: x-large;
+}
+
+.carousel-inner .type_and_genre p{
+    border-radius: 20px;
+    background-color: #005CD6;
+    padding: 0px 15px;
+    width: fit-content;
+    display: inline-block;   /* Allow paragraphs to sit side-by-side */
+    margin-right: 5px;
+    margin-left: -3px;
+    margin-top: -3px;
+    margin-bottom: 0px;
+    font-size: 15px;
+  }
+
+
+
+
+/* TEXT HEADERS */
+.main .content h1{
+    color: black;
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+.content .tools_container .btn_holder button{
+    width: 100%;
+    height: 100px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+    border: none;
+    border-radius: 15px;
+}
+
+.content .tools_container .btn_holder i{
+    font-size: xx-large;
+}
+
+
+.content .tools_container .btn_holder p{
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Style the buttons */
+.btn_assessType {
+    display: inline-flex; /* Allow background to be visible around icon */
+    align-items: center;  /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    background-color: white; 
+    border: none;
+    padding: 15px; 
+    border-radius: 5px;
+    transition: background-color 0.5s ease, transform 0.5s ease; 
+}
+
+/* Hover effects */
+.btn_assessType:hover {
+    background-image: linear-gradient(to bottom right, #007BFF, #0056b3); /* Gradient on hover */
+}
+  
+
+.btn_assessType:hover i {
+    transform: rotate(360deg); /* Rotate icon 360 degrees on hover */
+    color: white;
+    transition: transform 1s ease;
+}
+
+/* Icon styling */
+.btn_assessType i {
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #005CD6; /* Initial icon color */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions for icon */
+}
+
+
+
+
+/* TITLE HEADER */
+.title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title_header{
+font-size: 18px;
+font-weight: 700;
+margin-bottom: -5px;
+}
+
+.subtitle{
+color: #005CD6;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin: auto;
+}
+
+.title button{
+background: #005CD6;
+font-family: Poppins;
+font-size: 15px;
+font-weight: 700;
+color: white;
+padding: 7px 15px;
+border: none;
+border-radius: 10px;
+height: fit-content;
+cursor: pointer;
+}
+
+.title .view-all i {
+margin-left: 10px; 
+color: white;
+}
+
+  
+
+
+
+/* TITLES */
+.main .content .title_container{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex; 
+}
+.main .content .btn_scroll{
+    width: fit-content;
+    height: fit-content;
+    border: 2px solid #005CD6   ;
+    border-radius: 100px;
+    background-color: #F2FFFA;
+}
+.main .content .btn_scroll i{
+    margin: 10px;
+}
+.main .content .title_container .owl-carousel{
+    overflow: hidden;
+    border-radius: 10px;
+}
+.main .content .owl-item{
+    width: fit-content !important;
+    margin-right: 40px;
+}
+.main .content .title_container .owl-carousel .card{
+    background: rgb(205,255,216);
+    background: linear-gradient(72deg, rgba(205,255,216,1) 0%, rgba(148,185,255,1) 100%);
+    border-radius: 15px;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+}
+
+.main .content .owl-carousel .card-title{
+    font-weight: 700;
+    color: black;
+    padding-right: 0.5rem;
+}
+
+.main .content .owl-carousel .card-text{
+    padding-right: 0.5rem; /* Adjust top padding (4 pixels) */
+    padding-bottom: 0.5rem;    /* Remove bottom padding */
+}
+
+
+.main .content .assesment_container{
+    width: 100%;
+    height: fit-content;
+    position: relative;
+}
+.main .content .owl-carousel .card:hover{
+    cursor: pointer;
+}
+.main .content .owl-carousel{
+    mask-image: linear-gradient(to right, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+}
+
+
+
+
+/* ASSESSMENTS CAROUSEL */
+.assesment_container .owl-carousel .card{
+    width: 18rem;
+    height: 6rem;
+    background-color: white;
+    box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.15);
+    padding: 10px 5px;
+    height: fit-content;
+    border-radius: 15px;
+}
+
+
+
+
+/* ENTER TEXT MODAL POPUP */
+.modal-body {
+    height: fit-content;
+    padding: 50px 50px;
+}
+
+.modal-body h1 {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 700;
+    }
+.modal-body .input_text{
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background-color: #BFD6F5;
+}
+.modal-body .title_container{
+    width: 100%;
+}
+.modal-body .title_container .input_title{
+    width: 100%;
+    height: fit-content;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #BFD6F5;
+    }
+.modal-body .title_container .input_title .btn-group button{    
+    position: absolute;
+    right: 1px;
+    top: 20%;
+    background-color: #BFD6F5;
+    border: none;
+    border-radius: 10px;
+}
+.modal-body .title_container .input_title .btn-group ul{
+    max-height: 200px !important;
+    overflow-y: scroll;
+}
+.modal-body .title_container .add_title{
+    width: 50px;
+    height: 50px;
+    /* margin-left: 10px; */
+    border-radius: 10px;
+    border: none;
+    background-color: #005CD6;
+}
+
+.modal-body textarea, .bottom-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.modal-body textarea {
+    height: 15rem;
+    max-height: 20rem;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #BFD6F5;
+    color: black;
+    font-size: 15px;
+    font-family: 'Poppins';
+    margin-bottom: 20px;
+}
+
+.enter-text-container textarea:focus {
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+.enter-text-container textarea::placeholder {
+    font-family: 'Poppins';
+    color: #333;
+    font-size: 15px;
+}
+
+.enter-text-container input[type="file"] {
+    display: none;
+}
+
+.enter-text-container label {
+    display: inline-block;
+    color: #222222;
+    text-align: center;
+    padding: 5px 10px;
+    font-size: 15px;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #222222;
+}
+
+.enter-text-container label i {
+    margin-right: 10px;
+}
+
+.enter-text-container label:active {
+    transform: scale(0.95);
+}
+
+.file-upload-container {
+    display: flex;
+    align-items: center;
+}
+
+.file-upload-container input[type="file"] {
+    display: none;
+}
+
+.file-upload-container label {
+    display: inline-block;
+    color: #005CD6;
+    text-align: center;
+    padding: 15px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #005CD6;
+}
+
+.file-upload-container label:hover {
+    background-color: #a4c4ed;
+}
+
+.file-upload-container label i {
+    margin-right: 10px;
+}
+
+.modal-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 50px;
+}
+
+.progress-bar {
+    color: #222222;
+    font-size: 15px;
+    margin-left: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.button-container button {
+    width: fit-content;
+    margin-top: 30px;
+    border: none;
+    border-radius: 10px;
+    background-color: #005CD6;
+    color: white;
+    padding: 8px 50px;
+    font-family: 'Poppins';
+    cursor: pointer;
+    text-align: center;
+    font-size: 15px;
+}
+
+.button-container button:hover {
+    background-color: #002B64;
+}
+
+.simplified-text-container {
+    width: 48vw;
+    height: auto;
+    background: #BFD6F5;
+    border-radius: 20px;
+    padding: 10px 30px 20px;
+}
+
+.simplified-text-container h1 {
+    position: relative;
+    font-size: 22px;
+    line-height: 1;
+}
+
+.simplified-text-container textarea {
+    width: 100%;
+    box-sizing: border-box;
+    max-height: 12rem;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    font-family: 'Poppins';
+    margin-bottom: 20px;
+}
+
+.simplified-text-container textarea:focus {
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+.icon-container {
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 7px;
+}
+
+.icon-container .icon {
+    font-size: 15px;
+    margin-right: 10px;
+}
+
+.icon-container button {
+    background-color: transparent;
+    cursor: pointer;
+    color: #005CD6;
+    display: inline-block;
+    text-align: center;
+    padding: 15px 15px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #005CD6;
+}
+
+.icon-container button:hover {
+    color: #002B64;
+}
+
+.modal-container .btn-group {
+    gap:10px;
+    
+}
+
+.btn-group .simplify {
+    background-color: #005CD6;
+    border: none;
+    border-radius: 15px;
+    font-weight: 700;
+    padding: 0px 20px;
+    color: white;
+}
+
+.btn-group .paraphrase {
+    background-color: #005CD6;
+    border: none;
+    border-radius: 15px;
+    font-weight: 700;
+    padding: 0px 20px;
+    color: white;
+}
+
+.btn-group .translate {
+    background-color: #005CD6;
+    border: none;
+    border-radius: 15px;
+    font-weight: 700;
+    padding: 0px 20px;
+    color: white;
+}
+
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    font-family: Poppins;
+}
+
+
+/* MODAL / TAB / FOOTER */
+#multiTabModal .custom-modal-width {
+    max-width: 70%;
+}
+
+#multiTabModal .modal-body {
+    padding: 25px 20px 10px 20px;
+    height: fit-content;
+}
+
+#multiTabModal .modal-footer {
+    padding: 8px 15px 8px;
+}
+
+#multiTabModal .modal-dialog {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#multiTabModal .modal-content {
+    border-radius: 15px;
+}
+
+#multiTabModal .modal-header {
+    background-color: #005CD6;
+    width: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    color: white;
+}
+
+#multiTabModal .modal-header h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#multiTabModal .nav-tabs {
+    width: 100%;
+    font-weight: 600;
+    border-bottom-color: transparent;
+}
+
+#multiTabModal .nav-tabs .nav-link {
+    border: 1px solid #ddd;
+    padding: 10px 50px;
+    background-color: #f4f3f338;
+}
+
+#multiTabModal .nav-tabs .nav-link.active {
+    border-color: #ddd;
+    background-color: #005CD6;
+    color: white;
+    border-bottom-color: transparent;
+}
+
+#multiTabModal .nav-item button i {
+    margin-right: 5px;
+}
+
+#multiTabModal .tab-content{
+    padding: 40px 20px;
+    border: 1px solid #ddd;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+
+#multiTabModal .tab-content > .tab-pane {
+    display: none;
+}
+
+#multiTabModal .tab-content > .active {
+    display: block;
+}
+
+#multiTabModal .left-col, .right-col {
+    width: 48%;
+}
+
+#multiTabModal .left-col {
+    float: left;
+}
+
+#multiTabModal .right-col {
+    float: right;
+}
+
+/* TEXTAREA */
+#multiTabModal .textarea-container {
+    position: relative;
+}
+
+#multiTabModal .clearfix textarea {
+    height: 17rem;
+    max-height: 20rem;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background-color: #BFD6F5;
+    color: black;
+    font-size: 16px;
+    font-family: 'Poppins';
+    /* margin-bottom: 10px; */
+    line-height: 1.25;
+    resize: none;
+}
+#multiTabModal .right-col textarea {
+    height: 20rem;
+}
+
+#multiTabModal .clearfix textarea::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
+
+#multiTabModal .clearfix textarea {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+#multiTabModal .clearfix textarea:focus {
+    /* background-color: none; */
+    /* outline: none; */
+    box-shadow: none;
+}
+
+#multiTabModal .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+#multiTabModal .clearfix h1 {
+    font-size: 19px;
+    font-weight: 700;
+}
+
+/* COPY BUTTON */
+#multiTabModal .textarea-container .btn-icon {
+    z-index: 1;
+    font-size: 16px;
+    padding: 0px;
+    color: #005CD6;
+    border: none;
+}
+
+/* FILE UPLOAD BUTTON */
+#multiTabModal .file-upload-container {
+    position: absolute;
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#multiTabModal .file-upload-container input[type="file"] {
+    display: none;
+}
+
+#multiTabModal .file-upload-container label {
+    display: inline-block;
+    color: #005CD6;
+    text-align: center;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid #005CD6;
+}
+
+#multiTabModal .file-upload-container label:hover {
+    background-color: #a4c4ed7a;
+}
+
+#multiTabModal .file-upload-container label i, .dropdown i {
+    margin-right: 5px;
+}
+
+#multiTabModal .hidden {
+    display: none !important;
+}
+
+/* GENERATE BUTTON */
+#multiTabModal .generate-container {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #BFD6F5;
+    margin-top: -33px !important; 
+    border-radius: 0 0 10px 10px;
+}
+#multiTabModal .generate-container .btn-generate {
+    font-weight: 600;
+    border-radius: 14px;
+    margin: 15px 20px 10px;
+}
+
+#multiTabModal .generate-container .btn-generating {
+    font-weight: 600;
+    border-radius: 14px;
+    margin: 15px 20px 10px;
+}
+
+/* DROPDOWN TRANSLATE */
+#multiTabModal .dropdown-lang button {
+    border: none;
+    font-size: 19px;
+    font-weight: 700;
+    color: #212529;
+    padding: 0;
+    margin: 0 0 5px;
+    background: none;
+}
+
+#multiTabModal .dropdown-toggle:focus,
+.dropdown-toggle:active {
+    background-color: transparent !important;
+    color: #212529;
+}
+
+#multiTabModal .dropdown-lang button:hover {
+    background: none;
+    border: none;
+    color: #005CD6;
+}
+
+#multiTabModal .dropdown-lang .dropdown-menu {
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+#multiTabModal .dropdown-lang .dropdown-menu .form-control {
+    font-size: 14px;
+}
+
+/* FOOTER BUTTONS */
+#multiTabModal .modal-footer-buttons{
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+
+#multiTabModal .modal-footer-buttons button{
+    border-radius: 15px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+
+/* SAVE ENTRY POPUP */
+#saveEntry .col-12 input[type=text]{
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background-color: #BFD6F5;
+    color: black;
+    font-family: Poppins;
+}
+
+#saveEntry .modal-body select {
+    background-color: #BFD6F5;
+    padding: 15px 20px;
+    border: none;
+    width: 100%;
+}
+
+#saveEntry .modal-body h1 {
+    font-size: 22px;
+    line-height: 1;
+    font-weight: 700;
+}
+
+#saveEntry .col-1 button{
+    background-color: #005CD6;
+    padding: 13px;
+    border: none;
+    border-radius: 5px;
+    margin-left: -13px;
+    height: 54px;
+}
+
+#saveEntry .modal-footer-button{
+    display: flex;
+    justify-content: end;
+}
+
+
+#saveEntry .modal-footer-button button{
+    border-radius: 15px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#saveEntry input:focus, 
+#saveEntry select:focus {
+    background: #BFD6F5;
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+
+/* ENTRY SAVED POPUP */
+#entry-saved-popup .modal-body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#entry-saved-popup h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+/* Checkmark animation */
+.checkmark-animation {
+    color: #28a745; /* Green success color */
+    animation: checkmark-bounce 1s ease-out;
+}
+
+@keyframes checkmark-bounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#entry-saved-popup button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #7ED957;
+    border: none;
+    border-radius: 15px;
+    color: #000;
+    font-weight: 700;
+}
+
+
+/* CITE POPUP */
+#cite-popup .modal-dialog-centered {
+    border-radius: 20px;
+}
+
+#cite-popup .modal-content {
+    border-radius: 15px;
+}
+
+#cite-popup .modal-header {
+    background-color: #005CD6;
+    width: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    color: white;
+}
+
+#cite-popup .modal-header h1{
+    font-size: 30px;
+    font-weight: 700;
+}
+  
+#cite-popup .modal-body h2{
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 700;
+}
+  
+#cite-popup .modal-body {
+    padding: 20px; /* Add padding to all sides */
+}
+  
+  /* Full-width input fields */
+#cite-popup .modal-body input[type=text] {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background-color: #BFD6F5;
+    color: black;
+    font-family: Poppins;
+}
+  
+#cite-popup .modal-body select {
+    background-color: #BFD6F5;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Style the copy button */
+#cite-popup .copy-button {
+    position: absolute;
+    top: 70%;                      /* Position it in the middle vertically */
+    right: 10px;                   /* Adjust as needed */
+    transform: translateY(-50%);   /* Center it vertically */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#cite-popup .copy-button i {
+    color: #005CD6;
+    font-size: x-large;
+}
+
+#cite-popup .header-divider {
+    margin-bottom: -35px;
+}
+
+
+#cite-popup .col-3 p{
+    font-size: medium;
+    font-weight: 700;
+    color: #005CD6;
+    text-align: right;
+    margin-top: 16px;
+}
+
+#cite-popup .col-1 button, .cite-save{
+    background-color: #005CD6;
+    color: white;
+    font-weight: 700;
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 7px 5px;
+}
+
+#cite-popup .save-btn-container{
+    display: flex;           /* Enable flexbox */
+    justify-content: center;  /* Horizontal alignment */
+    align-items: center;
+}
+
+#cite-popup .cite-save{
+    font-size: large;
+    padding: 10px 20px;
+    width: fit-content;
+}
+
+#cite-popup .form-select:focus,
+#cite-popup .form-control:focus  {
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+
+
+/* TOAST */
+.logo-img-toast {
+    width: 10px; /* Adjust the width as per your requirement */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.toast-container.show {
+    display: block;
+    animation: fadeInOut 3s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+
+
+/* CREATE NEW TITLE POPUP */
+#addTitle .modal-dialog {
+    border-radius: 20px;
+}
+
+#addTitle .modal-content {
+    border-radius: 15px;
+}
+
+#addTitle .modal-header {
+    background-color: #005CD6;
+    width: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 20px;
+    color: white;
+  }
+
+  #addTitle .modal-header h1{
+    font-size: 30px;
+    font-weight: 700;
+  }
+  
+  #addTitle .bluetext{
+    color: #005CD6;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: -25px;
+  }
+  
+  #addTitle .modal-body h2{
+    margin-bottom: 0px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  
+  #addTitle .modal-body {
+    padding: 20px; /* Add padding to all sides */
+}
+  
+/* Full-width input fields */
+#addTitle .modal-body input[type=text] {
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background-color: #BFD6F5;
+    color: #212529;
+    font-family: Poppins;
+}
+
+#addTitle .modal-body select {
+    margin-top: 10px;
+    background-color: #BFD6F5;
+    padding: 15px 20px;
+    border: none;
+}
+
+
+#addTitle .btn-primary{
+    border-radius: 15px;
+    font-weight: 700;
+    width: 100%;
+    height: 50px;
+}
+
+#addTitle .form-select:focus, 
+#addTitle .form-control:focus {
+    background-color: #BFD6F5;
+    outline: none;
+    box-shadow: 0 0 4px grey;
+}
+
+
+/* TITLE SAVED POPUP */
+#title-saved-popup .modal-body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#title-saved-popup h1 {
+    font-size: 28px;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    margin: 10px;
+}
+
+/* Checkmark animation */
+.checkmark-animation {
+    color: #28a745; /* Green success color */
+    animation: checkmark-bounce 1s ease-out;
+}
+
+@keyframes checkmark-bounce {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+#title-saved-popup button {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #7ED957;
+    border: none;
+    border-radius: 15px;
+    color: #000;
+    font-weight: 700;
+}
