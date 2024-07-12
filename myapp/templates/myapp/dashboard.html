@@ -1,38 +1,10 @@
-<!DOCTYPE html>
-<html>
+{% extends 'main/base.html'%}
+{% load static %}
 
-<head>
-    {% load static %}
-    <meta charset="UTF-8" />
-    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <title>Dashboard</title>
-    <link rel="icon" href="{% static '/logo/symbol_blue.png' %}">
+   
+{% block title%}Dashboard {%endblock%}
 
-    <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
-    <link rel="stylesheet" href="{% static '/css/sidebar.css' %}">
-    <link rel="stylesheet" href="{% static '/css/profile_dropdown.css' %}">
-    
-    <!-- CSS FOR OWL CAROUSEL -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"        integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- CSS FOR BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    
-    <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- SCRIPT -->
-    <!-- <script src="./js/tools.js" defer></script> -->
-</head>
-
-
-
-<body>
-
-    <!-- SIDEBAR -->
-    {% include 'myapp/sidebar.html' %}
-
+{% block content %}
     <div class="main">
 
         <div class="content">
@@ -495,26 +467,11 @@
 
 
 
-        <?php include("tools_popup.php"); ?>
+        {% comment %} <?php include("tools_popup.php"); ?> {% endcomment %}
     </div>
-
-    
-    <script src="{%static './js/dashboard.js' %}"></script>
-    <script src="{%static './js/dropdown_profile.js' %}"></script>
-    <script src="{%static './js/feature_popup.js' %}"></script>
-
-    <!-- Tesseract.js -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.4/dist/tesseract.min.js"></script> -->
-    <!-- PDF.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-    <!-- Mammoth.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
-
-    <!-- JS FOR BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <!-- SCRIPTS OWL-CAROUSEL START-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+{% endblock %}
+{% block add_scripts %}
+    <script src="{%static '/js/feature_popup.js' %}"></script>
 
     <script>               
 
@@ -588,8 +545,7 @@ if (!isEventListenerAttached) {
     titleSavedModal._element.addEventListener('hidden.bs.modal', function () {
         document.querySelector('.modal-backdrop').remove();
     });
-  
-  
+
         // Add event listener for buttons that open the modal
         document.querySelectorAll('.btn_assessType').forEach(button => {
             button.addEventListener('click', function() {
@@ -629,12 +585,10 @@ if (!isEventListenerAttached) {
     
 
     </script>
+{% endblock %}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- SCRIPTS OWL-CAROUSEL END-->
-
-</body>
-
+{% block add_stylesheet %}
+<link rel="stylesheet" href="{%static '/css/dashboard.css' %}">
 <style>
     .sidebar ul li .nav_dash{
         background-color: white ;
@@ -642,14 +596,4 @@ if (!isEventListenerAttached) {
     }
 </style>
 
-
-</html>
-
-<?php
-
-}
-else{
-    header("Location: ./homepage.php");
-    exit();
-}
-?>
+{% endblock add_stylesheet %}
